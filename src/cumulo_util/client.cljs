@@ -1,12 +1,12 @@
 
-(ns app.client
+(ns cumulo-util.client
   (:require [respo.core :refer [render! clear-cache! realize-ssr!]]
             [respo.cursor :refer [mutate]]
-            [app.comp.container :refer [comp-container]]
+            [cumulo-util.comp.container :refer [comp-container]]
             [cljs.reader :refer [read-string]]
-            [app.connection :refer [send! setup-socket!]]
-            [app.schema :as schema]
-            [app.config :as config]))
+            [cumulo-util.connection :refer [send! setup-socket!]]
+            [cumulo-util.schema :as schema]
+            [cumulo-util.config :as config]))
 
 (declare dispatch!)
 

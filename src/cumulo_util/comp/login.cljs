@@ -1,12 +1,12 @@
 
-(ns app.comp.login
+(ns cumulo-util.comp.login
   (:require [respo.core :refer [defcomp <> div input button span]]
             [respo.comp.space :refer [=<]]
             [respo.comp.inspect :refer [comp-inspect]]
             [respo-ui.core :as ui]
-            [app.schema :as schema]
-            [app.style :as style]
-            [app.config :as config]))
+            [cumulo-util.schema :as schema]
+            [cumulo-util.style :as style]
+            [cumulo-util.config :as config]))
 
 (def initial-state {:username "", :password ""})
 

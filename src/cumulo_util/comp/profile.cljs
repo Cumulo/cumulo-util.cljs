@@ -1,11 +1,11 @@
 
-(ns app.comp.profile
+(ns cumulo-util.comp.profile
   (:require [hsl.core :refer [hsl]]
-            [app.schema :as schema]
+            [cumulo-util.schema :as schema]
             [respo-ui.core :as ui]
             [respo.core :refer [defcomp list-> <> span div button]]
             [respo.comp.space :refer [=<]]
-            [app.config :as config]))
+            [cumulo-util.config :as config]))
 
 (defcomp
  comp-profile

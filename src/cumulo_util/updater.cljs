@@ -1,9 +1,9 @@
 
-(ns app.updater
-  (:require [app.updater.session :as session]
-            [app.updater.user :as user]
-            [app.updater.router :as router]
-            [app.schema :as schema]
+(ns cumulo-util.updater
+  (:require [cumulo-util.updater.session :as session]
+            [cumulo-util.updater.user :as user]
+            [cumulo-util.updater.router :as router]
+            [cumulo-util.schema :as schema]
             [respo-message.updater :refer [update-messages]]))
 
 (defn updater [db op op-data sid op-id op-time]

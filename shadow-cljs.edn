@@ -17,8 +17,8 @@
  :builds {:client {:output-dir "target/"
                    :asset-path "./"
                    :target :browser
-                   :modules {:client {:init-fn app.client/main!}}
-                   :devtools {:after-load app.client/reload!
+                   :modules {:client {:init-fn cumulo-util.client/main!}}
+                   :devtools {:after-load cumulo-util.client/reload!
                               :http-root "target"
                               :http-port 7000}
                    :release {:output-dir "dist/"}
@@ -26,10 +26,10 @@
                              :build-options {:manifest-name "assets.edn"}}
           :page {:target :node-script
                  :output-to "target/page.js"
-                 :main app.page/main!
-                 :devtools {:after-load app.page/main!}}
+                 :main cumulo-util.page/main!
+                 :devtools {:after-load cumulo-util.page/main!}}
           :server {:target :node-script
                    :output-to "target/server.js"
-                   :main app.server/main!
-                   :devtools {:after-load app.server/reload!}
+                   :main cumulo-util.server/main!
+                   :devtools {:after-load cumulo-util.server/reload!}
                    :release {:output-to "dist/server.js"}}}}

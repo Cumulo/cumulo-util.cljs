@@ -1,17 +1,18 @@
 
-(ns app.server
-  (:require [app.schema :as schema]
-            [app.service :refer [run-server! sync-clients!]]
-            [app.updater :refer [updater]]
+(ns cumulo-util.server
+  (:require [cumulo-util.schema :as schema]
+            [cumulo-util.service :refer [run-server! sync-clients!]]
+            [cumulo-util.updater :refer [updater]]
             [cljs.reader :refer [read-string]]
             [cumulo-reel.reel :refer [reel-reducer refresh-reel reel-schema]]
             ["fs" :as fs]
             ["shortid" :as shortid]
             ["child_process" :as cp]
             ["path" :as path]
-            [app.node-config :as node-config]
-            [app.node-config :refer [dev?]]
-            [app.config :as config]))
+            [cumulo-util.node-config :as node-config]
+            [cumulo-util.node-config :refer [dev?]]
+            [cumulo-util.config :as config]
+            [cumulo-util.core :refer [detect-then-write!]]))
 
 (def initial-db
   (let [filepath (:storage-path node-config/env)]
@@ -24,18 +25,6 @@
 (defonce *reel (atom (merge reel-schema {:base initial-db, :db initial-db})))
 
 (defonce *reader-reel (atom @*reel))
-
-(defn detect-then-write! [file-path content]
-  (let [do-write! (fn []
-                    (cp/execSync (str "mkdir -p " (path/dirname file-path)))
-                    (fs/writeFileSync file-path content)
-                    (println "Write to file:" file-path))]
-    (if (fs/existsSync file-path)
-      (let [old-content (fs/readFileSync file-path "utf8")]
-        (if (not= content old-content)
-          (do-write!)
-          (comment println "same file, skipping:" file-path)))
-      (do-write!))))
 
 (defn persist-db! []
   (let [file-content (pr-str (assoc (:db @*reel) :sessions {}))

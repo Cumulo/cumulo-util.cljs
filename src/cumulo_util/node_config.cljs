@@ -1,5 +1,5 @@
 
-(ns app.node-config (:require ["path" :as path] [app.config :as config]))
+(ns cumulo-util.node-config (:require ["path" :as path] [cumulo-util.config :as config]))
 
 (def dev? (do ^boolean js/goog.DEBUG))
 

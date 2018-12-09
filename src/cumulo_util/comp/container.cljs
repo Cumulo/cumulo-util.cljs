@@ -1,18 +1,18 @@
 
-(ns app.comp.container
+(ns cumulo-util.comp.container
   (:require [hsl.core :refer [hsl]]
             [respo-ui.core :as ui]
             [respo.core :refer [defcomp <> div span action-> cursor-> button]]
             [respo.comp.inspect :refer [comp-inspect]]
             [respo.comp.space :refer [=<]]
-            [app.comp.navigation :refer [comp-navigation]]
-            [app.comp.profile :refer [comp-profile]]
-            [app.comp.login :refer [comp-login]]
+            [cumulo-util.comp.navigation :refer [comp-navigation]]
+            [cumulo-util.comp.profile :refer [comp-profile]]
+            [cumulo-util.comp.login :refer [comp-login]]
             [respo-message.comp.messages :refer [comp-messages]]
             [cumulo-reel.comp.reel :refer [comp-reel]]
-            [app.config :refer [dev?]]
-            [app.schema :as schema]
-            [app.config :as config]))
+            [cumulo-util.config :refer [dev?]]
+            [cumulo-util.schema :as schema]
+            [cumulo-util.config :as config]))
 
 (defcomp
  comp-offline

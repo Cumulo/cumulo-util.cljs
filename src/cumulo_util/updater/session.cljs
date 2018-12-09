@@ -1,5 +1,5 @@
 
-(ns app.updater.session (:require [app.schema :as schema]))
+(ns cumulo-util.updater.session (:require [cumulo-util.schema :as schema]))
 
 (defn connect [db op-data sid op-id op-time]
   (assoc-in db [:sessions sid] (merge schema/session {:id sid})))

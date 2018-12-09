@@ -1,12 +1,12 @@
 
-(ns app.page
+(ns cumulo-util.page
   (:require [respo.render.html :refer [make-string]]
             [shell-page.core :refer [make-page spit slurp]]
-            [app.comp.container :refer [comp-container]]
+            [cumulo-util.comp.container :refer [comp-container]]
             [cljs.reader :refer [read-string]]
-            [app.schema :as schema]
-            [app.config :as config]
-            [app.util :refer [get-env!]]
+            [cumulo-util.schema :as schema]
+            [cumulo-util.config :as config]
+            [cumulo-util.core :refer [get-env!]]
             [build.util :refer [get-ip!]])
   (:require-macros [clojure.core.strint :refer [<<]]))
 

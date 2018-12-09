@@ -1,5 +1,5 @@
 
-(ns app.connection
+(ns cumulo-util.connection
   (:require [cljs.reader :as reader] [recollect.patch :refer [patch-twig]]))
 
 (defonce *global-ws (atom nil))

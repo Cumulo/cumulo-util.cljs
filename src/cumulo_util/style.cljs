@@ -1,5 +1,5 @@
 
-(ns app.style (:require [hsl.core :refer [hsl]] [respo-ui.core :as ui]))
+(ns cumulo-util.style (:require [hsl.core :refer [hsl]] [respo-ui.core :as ui]))
 
 (def link
   {:text-decoration :underline,

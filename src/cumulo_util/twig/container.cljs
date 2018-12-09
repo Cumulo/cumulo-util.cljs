@@ -1,7 +1,7 @@
 
-(ns app.twig.container
+(ns cumulo-util.twig.container
   (:require [recollect.twig :refer [deftwig]]
-            [app.twig.user :refer [twig-user]]
+            [cumulo-util.twig.user :refer [twig-user]]
             ["randomcolor" :as color]))
 
 (deftwig

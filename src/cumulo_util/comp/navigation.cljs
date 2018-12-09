@@ -1,10 +1,10 @@
 
-(ns app.comp.navigation
+(ns cumulo-util.comp.navigation
   (:require [hsl.core :refer [hsl]]
             [respo-ui.core :as ui]
             [respo.comp.space :refer [=<]]
             [respo.core :refer [defcomp <> action-> span div]]
-            [app.config :as config]))
+            [cumulo-util.config :as config]))
 
 (defcomp
  comp-navigation

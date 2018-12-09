@@ -1,8 +1,8 @@
 
-(ns app.service
+(ns cumulo-util.service
   (:require [cljs.nodejs :as nodejs]
             [cljs.reader :as reader]
-            [app.twig.container :refer [twig-container]]
+            [cumulo-util.twig.container :refer [twig-container]]
             [recollect.diff :refer [diff-twig]]
             [recollect.twig :refer [render-twig]]
             ["shortid" :as shortid]

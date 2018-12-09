@@ -1,5 +1,5 @@
 
-(ns app.schema )
+(ns cumulo-util.schema )
 
 (def router {:name nil, :title nil, :data {}, :router nil})
 
