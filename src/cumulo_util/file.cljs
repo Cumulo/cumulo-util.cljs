@@ -1,5 +1,24 @@
 
-(ns cumulo-util.file (:require ["path" :as path] ["fs" :as fs] ["child_process" :as cp]))
+(ns cumulo-util.file
+  (:require ["path" :as path]
+            ["fs" :as fs]
+            ["child_process" :as cp]
+            [cljs.reader :refer [read-string]]))
+
+(defn get-backup-path! []
+  (let [now (js/Date.)]
+    (path/join
+     js/__dirname
+     "backups"
+     (str (inc (.getMonth now)))
+     (str (.getDate now) "-snapshot.edn"))))
+
+(defn merge-local-edn! [x0 filepath handler]
+  (merge
+   x0
+   (let [found? (fs/existsSync filepath)]
+     (if (fn? handler) (handler found?))
+     (if found? (read-string (fs/readFileSync filepath "utf8")) nil))))
 
 (defn write-mildly! [file-path content]
   (let [do-write! (fn []
