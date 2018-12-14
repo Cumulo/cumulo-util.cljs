@@ -95,7 +95,14 @@
         :data {
          "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1544809381057, :text "js/setTimeout", :id "BOBh82M65zleaf"}
          "j" {:type :leaf, :by "B1y7Rc-Zz", :at 1544809954481, :text "task", :id "qEwl_tc9p"}
-         "r" {:type :leaf, :by "B1y7Rc-Zz", :at 1544809385199, :text "duration", :id "Jq-SbRatL"}
+         "r" {
+          :type :expr, :by "B1y7Rc-Zz", :at 1544810367577, :id "Gbl7Z5z2k"
+          :data {
+           "D" {:type :leaf, :by "B1y7Rc-Zz", :at 1544810371268, :text "*", :id "skl6DGfyqZ"}
+           "L" {:type :leaf, :by "B1y7Rc-Zz", :at 1544810372387, :text "1000", :id "9oQBm2Jc2"}
+           "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1544809385199, :text "duration", :id "Jq-SbRatL"}
+          }
+         }
         }
        }
       }
@@ -217,7 +224,14 @@
         :data {
          "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1544809517696, :text "js/setInterval", :id "AZc7YTbefdleaf"}
          "j" {:type :leaf, :by "B1y7Rc-Zz", :at 1544809520848, :text "task", :id "wWZIQNvlH"}
-         "r" {:type :leaf, :by "B1y7Rc-Zz", :at 1544809523099, :text "duration", :id "z9gMX0JWrb"}
+         "r" {
+          :type :expr, :by "B1y7Rc-Zz", :at 1544810355918, :id "9iktvpJSMk"
+          :data {
+           "D" {:type :leaf, :by "B1y7Rc-Zz", :at 1544810356885, :text "*", :id "8Li8wy6ivM"}
+           "L" {:type :leaf, :by "B1y7Rc-Zz", :at 1544810357950, :text "1000", :id "7Aaojk3i-X"}
+           "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1544809523099, :text "duration", :id "z9gMX0JWrb"}
+          }
+         }
         }
        }
       }
