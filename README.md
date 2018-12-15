@@ -9,7 +9,7 @@ Cumulo Util (WIP)
 [![Clojars Project](https://img.shields.io/clojars/v/cumulo/util.svg)](https://clojars.org/cumulo/util)
 
 ```edn
-[cumulo/util "0.1.2"]
+[cumulo/util "0.1.3"]
 ```
 
 ```clojure
@@ -24,7 +24,9 @@ Cumulo Util (WIP)
 (cumulo-util.file/get-backup-path!)
 (cumulo-util.file/merge-local-edn! {} "a.edn" (fn [found?] (println found?)))
 
-(cumulo-util.build/get-ip!) ; a macro
+; macros
+(cumulo-util.build/get-ip!)
+(cumulo-util.build/inline-resource "a.text")
 ```
 
 ### License
