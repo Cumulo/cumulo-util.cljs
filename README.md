@@ -9,7 +9,7 @@ Cumulo Util (WIP)
 [![Clojars Project](https://img.shields.io/clojars/v/cumulo/util.svg)](https://clojars.org/cumulo/util)
 
 ```edn
-[cumulo/util "0.1.3"]
+[cumulo/util "0.1.4"]
 ```
 
 ```clojure
