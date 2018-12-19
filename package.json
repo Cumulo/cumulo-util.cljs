@@ -12,7 +12,9 @@
   },
   "author": "jiyinyiyong",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "shortid": "^2.2.14"
+  },
   "devDependencies": {
     "shadow-cljs": "^2.7.9",
     "source-map-support": "^0.5.9",

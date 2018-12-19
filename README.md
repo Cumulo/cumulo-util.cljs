@@ -9,7 +9,13 @@ Cumulo Util (WIP)
 [![Clojars Project](https://img.shields.io/clojars/v/cumulo/util.svg)](https://clojars.org/cumulo/util)
 
 ```edn
-[cumulo/util "0.1.4"]
+[cumulo/util "0.1.5"]
+```
+
+Notice that you will need `shortid` in your project since it's depended on:
+
+```bash
+yarn add shortid
 ```
 
 ```clojure
@@ -19,6 +25,7 @@ Cumulo Util (WIP)
 (cumulo-util.core/unix-time!)
 (cumulo-util.core/repeat! 1 #(println "doing")!) ; in seconds
 (cumulo-util.core/delay! 1 #(println "done")!) ; in seconds
+(cumulo-util.core/on-page-touch (fn [] (println "touched")))
 
 (cumulo-util.file/write-mildly! "a.text" "content")
 (cumulo-util.file/get-backup-path!)

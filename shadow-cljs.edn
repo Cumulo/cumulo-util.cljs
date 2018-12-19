@@ -5,7 +5,14 @@
                 "clojars" {:url "https://mirrors.ustc.edu.cn/clojars/"}}
  :open-file-command ["subl" ["%s:%s:%s" :file :line :column]]
  :builds {:app {:target :node-script
-                   :output-to "target/app.js"
-                   :main cumulo-util.app/main!
-                   :devtools {:after-load cumulo-util.app/reload!}
-                   :release {:output-to "dist/app.js"}}}}
+                :output-to "target/app.js"
+                :main cumulo-util.app/main!
+                :devtools {:after-load cumulo-util.app/reload!}
+                :release {:output-to "dist/app.js"}}
+          :client {:target :browser
+                   :output-dir "target/"
+                   :asset-path "./"
+                   :modules {:client {:init-fn cumulo-util.client/main!}}
+                   :devtools {:after-load cumulo-util.client/reload!
+                              :http-root "target"
+                              :http-port 7000}}}}
