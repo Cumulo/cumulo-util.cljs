@@ -9,7 +9,7 @@ Cumulo Util (WIP)
 [![Clojars Project](https://img.shields.io/clojars/v/cumulo/util.svg)](https://clojars.org/cumulo/util)
 
 ```edn
-[cumulo/util "0.1.5"]
+[cumulo/util "0.1.6"]
 ```
 
 Notice that you will need `shortid` in your project since it's depended on:
@@ -30,6 +30,7 @@ yarn add shortid
 (cumulo-util.file/write-mildly! "a.text" "content")
 (cumulo-util.file/get-backup-path!)
 (cumulo-util.file/merge-local-edn! {} "a.edn" (fn [found?] (println found?)))
+(cumulo-util.file/sh! "ls") ; run shell command
 
 ; macros
 (cumulo-util.build/get-ip!)

@@ -20,6 +20,8 @@
      (if (fn? handler) (handler found?))
      (if found? (read-string (fs/readFileSync filepath "utf8")) nil))))
 
+(defn sh! [command] (println command) (println (.toString (cp/execSync command))))
+
 (defn write-mildly! [file-path content]
   (let [do-write! (fn []
                     (cp/execSync (str "mkdir -p " (path/dirname file-path)))
