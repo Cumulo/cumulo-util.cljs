@@ -35,6 +35,8 @@ yarn add shortid
 ; macros
 (cumulo-util.build/get-ip!)
 (cumulo-util.build/inline-resource "a.text")
+
+(cumulo-util.aync/all-once get-chan [1 2 3 4]) ; like Promise.all
 ```
 
 ### License
