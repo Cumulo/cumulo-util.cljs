@@ -2,9 +2,13 @@
 (ns cumulo-util.app
   (:require [cumulo-util.core :refer [delay!]]
             [clojure.core.async :refer [go chan >! <!]]
-            [cumulo-util.async :refer [all-once]]))
+            [cumulo-util.async :refer [all-once]]
+            [cumulo-util.file :refer [chan-pick-port]]
+            [clojure.core.async :refer [go <! chan]]))
 
-(defn task! []
+(defn pick-port! [] (go (let [port (<! (chan-pick-port 6001))] (println "got port" port))))
+
+(defn wait-sleep! []
   (go
    (let [chan-rand-sleep (fn []
                            (let [<result (chan), x (rand-int 10)]
@@ -15,6 +19,8 @@
          all-results (<! (all-once chan-rand-sleep (repeat (rand-int 10) true)))]
      (println "all results:" all-results))))
 
-(defn main! [] (println "Started") (task!))
+(defn task! [] (comment wait-sleep!))
+
+(defn main! [] (println "Started") (task!) (pick-port!))
 
 (defn reload! [] (println "Reload") (task!))

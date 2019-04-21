@@ -4,6 +4,7 @@
  :repositories {"central" {:url "https://maven.aliyun.com/nexus/content/groups/public/"}
                 "clojars" {:url "https://mirrors.ustc.edu.cn/clojars/"}}
  :open-file-command ["subl" ["%s:%s:%s" :file :line :column]]
+ :dev-http {7000 "target/"}
  :builds {:app {:target :node-script
                 :output-to "target/app.js"
                 :main cumulo-util.app/main!
@@ -13,6 +14,4 @@
                    :output-dir "target/"
                    :asset-path "./"
                    :modules {:client {:init-fn cumulo-util.client/main!}}
-                   :devtools {:after-load cumulo-util.client/reload!
-                              :http-root "target"
-                              :http-port 7000}}}}
+                   :devtools {:after-load cumulo-util.client/reload!}}}}
