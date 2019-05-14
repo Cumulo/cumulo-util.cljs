@@ -61,8 +61,11 @@
 
 (defn write-mildly! [file-path content]
   (let [dir (path/dirname file-path)
+        filename (path/basename file-path)
+        temp-name (str "/tmp/" (.now js/Date) "-" (.random js/Math) "-" filename)
         do-write! (fn []
-                    (fs/writeFileSync file-path content)
+                    (fs/writeFileSync temp-name content)
+                    (fs/renameSync temp-name file-path)
                     (println "Write to file:" file-path))]
     (if (fs/existsSync file-path)
       (let [old-content (fs/readFileSync file-path "utf8")]
