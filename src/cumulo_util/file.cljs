@@ -60,8 +60,8 @@
 (defn sh! [command] (println command) (println (.toString (cp/execSync command))))
 
 (defn write-mildly! [file-path content]
-  (let [do-write! (fn []
-                    (cp/execSync (str "mkdir -p " (path/dirname file-path)))
+  (let [dir (path/dirname file-path)
+        do-write! (fn []
                     (fs/writeFileSync file-path content)
                     (println "Write to file:" file-path))]
     (if (fs/existsSync file-path)
@@ -69,4 +69,4 @@
         (if (not= content old-content)
           (do-write!)
           (comment println "same file, skipping:" file-path)))
-      (do-write!))))
+      ((do (when (not= "." dir) (cp/execSync (str "mkdir -p " dir))) do-write!)))))
