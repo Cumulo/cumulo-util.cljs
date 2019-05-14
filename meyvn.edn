@@ -1,7 +1,7 @@
 
 {:pom {:group-id "cumulo",
        :artifact-id "util",
-       :version "0.1.8",
+       :version "0.1.9",
        :name "Util functions for Cumulo projects"}
  :packaging {:jar {:enabled true
                    :remote-repository {:id "clojars"
