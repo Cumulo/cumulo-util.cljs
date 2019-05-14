@@ -69,4 +69,7 @@
         (if (not= content old-content)
           (do-write!)
           (comment println "same file, skipping:" file-path)))
-      ((do (when (not= "." dir) (cp/execSync (str "mkdir -p " dir))) do-write!)))))
+      (do
+       (when (and (not= "." dir) (not (fs/existsSync dir)))
+         (fs/mkdirSync dir (clj->js {:recursive true})))
+       (do-write!)))))
