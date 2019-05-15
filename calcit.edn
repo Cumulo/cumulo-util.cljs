@@ -136,8 +136,8 @@
         :type :expr, :by "B1y7Rc-Zz", :at 1557825830116, :id "Fhog0FvEP"
         :data {
          "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1557825858715, :text "write-mildly!", :id "Fhog0FvEPleaf"}
-         "j" {:type :leaf, :by "B1y7Rc-Zz", :at 1557827487367, :text "\"a/a/a", :id "JSC53UD4BS"}
-         "r" {:type :leaf, :by "B1y7Rc-Zz", :at 1557825860572, :text "\"a", :id "h2AmiE2MNg"}
+         "j" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854541314, :text "\"a/a/a", :id "JSC53UD4BS"}
+         "r" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854517454, :text "\"a", :id "h2AmiE2MNg"}
         }
        }
       }
@@ -1873,6 +1873,49 @@
              }
             }
            }
+           "L" {
+            :type :expr, :by "B1y7Rc-Zz", :at 1557854284087, :id "nwqPvxrJ9l"
+            :data {
+             "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854289025, :text "filename", :id "nwqPvxrJ9lleaf"}
+             "j" {
+              :type :expr, :by "B1y7Rc-Zz", :at 1557854289876, :id "u4EBnofJr4"
+              :data {
+               "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854293986, :text "path/basename", :id "bblvt497b"}
+               "j" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854300613, :text "file-path", :id "Az4iXf6vp"}
+              }
+             }
+            }
+           }
+           "P" {
+            :type :expr, :by "B1y7Rc-Zz", :at 1557854338428, :id "Nt8FQLMm_H"
+            :data {
+             "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854346642, :text "temp-name", :id "Nt8FQLMm_Hleaf"}
+             "j" {
+              :type :expr, :by "B1y7Rc-Zz", :at 1557854352074, :id "s7LQ6x-DyC"
+              :data {
+               "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854352532, :text "str", :id "F1poLd1dV"}
+               "b" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854468595, :text "\"/tmp/", :id "koUkEpTXOn"}
+               "j" {
+                :type :expr, :by "B1y7Rc-Zz", :at 1557854354575, :id "HrZMDb2I8"
+                :data {
+                 "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854356839, :text ".now", :id "LQPJTgXe9"}
+                 "j" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854362000, :text "js/Date", :id "ZcBn3NEil"}
+                }
+               }
+               "l" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854450555, :text "\"-", :id "0qwsG_7RSJ"}
+               "n" {
+                :type :expr, :by "B1y7Rc-Zz", :at 1557854443501, :id "M1Wfyk6Xw"
+                :data {
+                 "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854445243, :text ".random", :id "8DYXABnkFv"}
+                 "j" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854447285, :text "js/Math", :id "Kr2qP_CjYX"}
+                }
+               }
+               "p" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854454357, :text "\"-", :id "-vjJ3rQ3uH"}
+               "r" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854364419, :text "filename", :id "i0ShW8j48"}
+              }
+             }
+            }
+           }
            "T" {
             :type :expr, :by "B1y7Rc-Zz", :at 1543165227185, :id "uQxfg2TMYA"
             :data {
@@ -1889,8 +1932,16 @@
                 :type :expr, :by "B1y7Rc-Zz", :at 1543165236077, :id "GZiYbWBQ6g"
                 :data {
                  "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1543165236077, :text "fs/writeFileSync", :id "fcPM9gVMra"}
-                 "j" {:type :leaf, :by "B1y7Rc-Zz", :at 1543165236077, :text "file-path", :id "7ci4Ny_zLX"}
+                 "j" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854368692, :text "temp-name", :id "7ci4Ny_zLX"}
                  "r" {:type :leaf, :by "B1y7Rc-Zz", :at 1543165236077, :text "content", :id "HvMmQ5g31L"}
+                }
+               }
+               "t" {
+                :type :expr, :by "B1y7Rc-Zz", :at 1543165236077, :id "KLKDbLBuu"
+                :data {
+                 "T" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854334522, :text "fs/renameSync", :id "fcPM9gVMra"}
+                 "b" {:type :leaf, :by "B1y7Rc-Zz", :at 1557854375319, :text "temp-name", :id "7Dt_ufPHbP"}
+                 "j" {:type :leaf, :by "B1y7Rc-Zz", :at 1543165236077, :text "file-path", :id "7ci4Ny_zLX"}
                 }
                }
                "v" {
