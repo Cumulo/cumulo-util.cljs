@@ -4,7 +4,9 @@
   (:import (java.net InetAddress)))
 
 (defmacro get-ip! []
-  (.getHostAddress (InetAddress/getLocalHost)))
+  (let [my-ip (.getHostAddress (InetAddress/getLocalHost))]
+    (println "Current IP address is:" my-ip)
+    my-ip))
 
 (defmacro inline-resource [resource-path]
   (slurp resource-path))

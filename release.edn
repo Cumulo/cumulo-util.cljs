@@ -1,0 +1,6 @@
+{:version "0.1.10"
+ :group-id "cumulo"
+ :artifact-id "util"
+ :skip-tag true
+ :description "Util functions for Cumulo projects"
+ :scm-url "https://github.com/Cumuloe/cumulo-util"}
