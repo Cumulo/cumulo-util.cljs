@@ -4,7 +4,8 @@
             [clojure.core.async :refer [go chan >! <!]]
             [cumulo-util.async :refer [all-once]]
             [cumulo-util.file :refer [chan-pick-port write-mildly!]]
-            [clojure.core.async :refer [go <! chan]]))
+            [clojure.core.async :refer [go <! chan]]
+            [cumulo-util.build-info :refer [on-build!]]))
 
 (defn pick-port! [] (go (let [port (<! (chan-pick-port 6001))] (println "got port" port))))
 
