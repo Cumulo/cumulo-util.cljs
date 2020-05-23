@@ -13,6 +13,7 @@
   "author": "jiyinyiyong",
   "license": "MIT",
   "dependencies": {
+    "node-notifier": "^7.0.1",
     "shortid": "^2.2.15"
   },
   "devDependencies": {

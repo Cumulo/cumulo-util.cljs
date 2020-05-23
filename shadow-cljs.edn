@@ -11,7 +11,7 @@
   :builds {
     :app {
       :target :node-script, :output-to "target/app.js", :main cumulo-util.app/main!
-      :devtools {:after-load cumulo-util.app/reload!}
+      :devtools {:after-load cumulo-util.app/reload!, :build-notify cumulo-util.build-info/on-build!}
       :release {:output-to "dist/app.js"}
     }
     :client {
