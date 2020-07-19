@@ -4,10 +4,6 @@
 (defn all-once [chan-f xs]
   (assert (fn? chan-f) "expected a function")
   (assert (sequential? xs) "expected a sequence")
-  (let [all-tasks (doall (map chan-f xs)), <result (chan), *counter (atom 0)]
-    (go
-     (loop [acc [], tasks all-tasks]
-       (if (empty? tasks)
-         (>! <result acc)
-         (do (swap! *counter inc) (recur (conj acc (<! (first tasks))) (rest tasks))))))
-    <result))
+  (go
+   (loop [acc [], tasks (doall (map chan-f xs))]
+     (if (empty? tasks) acc (recur (conj acc (<! (first tasks))) (rest tasks))))))
